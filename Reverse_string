@@ -1,0 +1,4 @@
+s=input()
+stack=list(s)
+while stack:  
+    print(stack.pop(),end="")
