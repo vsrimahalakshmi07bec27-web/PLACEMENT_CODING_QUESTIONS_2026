@@ -1,0 +1,7 @@
+history = []
+history.append("Youtube")
+history.append("Google")
+history.append("chrome")
+print("current : ",history[-1])
+print("back : ",history.pop())
+print("current : ",history[-1])
