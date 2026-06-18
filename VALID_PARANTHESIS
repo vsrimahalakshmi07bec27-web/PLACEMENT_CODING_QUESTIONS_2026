@@ -1,0 +1,13 @@
+s=input()
+stack=[]
+luk={'}':'{',')':'(',']':'['}
+for cha in s:
+    if cha in '{([':
+        stack.append(cha)
+    elif cha in'})]':
+        if not stack or stack.pop() != luk[cha]:
+          print("NOT BALANCED")
+          break
+else :
+        print("balanced" if not stack else "not balanced")
+
