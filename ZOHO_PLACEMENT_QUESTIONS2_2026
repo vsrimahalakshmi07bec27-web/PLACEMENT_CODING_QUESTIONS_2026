@@ -1,0 +1,46 @@
+/* INPUT :
+enter the size of an input array 5
+enter the elements in an array 2 3 4 5 6
+enter the row and column you need 5 5
+OUTPUT:
+2 3 4 5 6
+8 5 7 9 11
+19 13 12 16 20
+39 32 25 28 36
+75 71 57 53 64
+*/
+#include <iostream>
+using namespace std;
+int main()
+{
+ int arr[100];
+  int n;
+ int arr1[100][100];
+ cout<<"enter the size of an input array";
+ cin>>n;
+ cout<<"enter the elements in an array";
+ for(int i=0;i<n;i++){
+     cin>>arr[i];
+ }
+ int r,c;
+ int k=0;
+ cout<<"enter the row and column you need";
+ cin>>r>>c;
+ for(int i=0;i<r;i++){
+     for(int j=0;j<c;j++){
+         if(i==0)
+             arr1[i][j]=arr[j];
+         else if(j==0)
+             arr1[i][j]=arr1[i-1][j]+arr1[i-1][n-1];
+         else
+         arr1[i][j]=arr1[i-1][j]+arr1[i-1][j-1];
+     }
+ }
+  for(int i=0;i<r;i++){
+  	for(int j=0;j<c;j++){
+     cout<<arr1[i][j]<<" ";
+	  }
+	  cout<<endl;
+	  }
+    return 0;
+}
